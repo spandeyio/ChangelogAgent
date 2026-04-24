@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog Agent</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Changelog Agent</h2>
+                <p class="subtitle">Anthropic Claude history</p>
+            </div>
+            
+            <div class="upload-section">
+                <h3>Knowledge Base</h3>
+                <p class="upload-help">Upload the changelog document to update the agent's context.</p>
+                
+                <label for="fileInput" class="file-label">
+                    <span>Select File (.md, .pdf)</span>
+                    <input type="file" id="fileInput" accept=".md,.pdf">
+                </label>
+                
+                <button onclick="uploadFile()" class="upload-btn">Upload & Process</button>
+                <div id="uploadStatus"></div>
+            </div>
+        </aside>
+
+        <main class="chat-main">
+            <div id="chatBox" class="chat-box">
+                <div class="message agent">
+                    Hello! I'm the Changelog Agent. I can help answer questions about Anthropic's Claude product evolution, model releases, and API changes.
+                </div>
+            </div>
+            
+            <div class="input-area">
+                <input type="text" id="queryInput" placeholder="Ask a question about Claude's history..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()" class="send-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>
