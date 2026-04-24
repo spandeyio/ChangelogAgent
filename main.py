@@ -5,7 +5,6 @@ from pydantic import BaseModel
 import os
 import shutil
 from typing import List, Dict
-from langchain_core.messages import HumanMessage, AIMessage
 
 from app.agent import changelog_agent
 from app.vector_store import vector_store_manager
